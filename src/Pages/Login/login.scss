@@ -1,0 +1,104 @@
+@import "../../theme/colorsConfig.scss";
+
+.authPage {
+  .logo {
+    position: absolute;
+    padding: clamp(20px, 9.5vw, 46px);
+    width: clamp(100px, 38.5vw, 250px);
+    padding-bottom: 0;
+  }
+  .login-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin: 25% 0px;
+    img {
+      width: clamp(50px, 20%, 120px);
+    }
+    .typography {
+      margin-top: 20px;
+      font-family: "Quicksand", sans-serif !important;
+      color: #fff;
+      font-weight: 600;
+      font-size: clamp(20px, 2.5vw, 24px);
+    }
+  }
+  .label {
+    color: #3d3d3d;
+    font-family: "Quicksand", sans-serif !important;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+
+  .authHeading {
+    font-size: 35px;
+    font-weight: 600;
+    color: #3d3d3d;
+    font-family: "Quicksand", sans-serif !important;
+  }
+  .icons {
+    width: 45px;
+    min-width: 45px;
+    padding: 0px;
+    img {
+      width: 45px;
+    }
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .divider-text {
+    font-family: "Quicksand", sans-serif !important;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: #838383;
+    padding: 0 10px;
+    letter-spacing: 1px;
+  }
+  .MuiFormHelperText-root {
+    margin-left: 0px;
+    margin-top: 8px;
+  }
+  .green-btn {
+    font-family: "Quicksand", sans-serif !important;
+    background-color: #1ebf73;
+    text-transform: none;
+    width: 75%;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .green-btn:hover {
+    background-color: #35bb7d;
+  }
+  .register-nav {
+    font-family: "Quicksand", sans-serif !important;
+    color: #3d3d3d;
+    span {
+      color: #17096b;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+  .MuiLoadingButton-loadingIndicator {
+    color: #fff !important;
+  }
+  .logoTitle:hover {
+    color: black;
+  }
+  @media (max-width: 900px) {
+    .green-btn {
+      margin-top: 30px;
+    }
+    .icons {
+      margin-left: 0.7rem;
+      margin-right: 0.7rem;
+    }
+    .MuiFormHelperText-root {
+      margin-top: 14px;
+    }
+  }
+}
