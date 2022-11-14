@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import { userLogin } from "../../Redux/Actions";
+import { userLogin } from "../../Redux/Actions";
 import {
   Paper,
   Button,
@@ -18,7 +18,7 @@ import * as Yup from "yup";
 import { Form, Formik } from "formik";
 // import { TextField } from "formik-mui";
 import "./login.scss";
-// import { useSnackbar } from "notistack";
+import { useSnackbar } from "notistack";
 import login_img from "../../assets/images/login.png";
 import logo from "../../assets/images/logo.png";
 import hour_glass from "../../assets/images/hourglass.png";
@@ -42,8 +42,8 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.user);
-  // const dispatch = useDispatch();
-  // const { enqueueSnackbar: notification } = useSnackbar();
+  const dispatch = useDispatch();
+  const { enqueueSnackbar: notification } = useSnackbar();
 
   useEffect(() => {
     checkUser(); // if user exists, user cannot access login page
@@ -52,16 +52,16 @@ const Login = () => {
 
   const checkUser = () => {
     if (user) {
-      navigate("/admin/statistics");
+      navigate("/dashboard");
     }
   };
 
   const handleLogin = async (values, setSubmitting) => {
     console.log(values);
     setTimeout(() => {
-      // dispatch(userLogin(values));
-      // navigate("/admin/statistics");
-      // notification("Logged in.");
+      dispatch(userLogin(values));
+      navigate("/dashboard");
+      notification("Logged in.");
       setSubmitting(false);
     }, 1500);
   };
@@ -238,7 +238,7 @@ const Login = () => {
                       <Typography
                         component={Button}
                         variant="subtitle2"
-                        onClick={()=> navigate("/forgot-password")}
+                        onClick={() => navigate("/forgot-password")}
                         sx={{
                           fontSize: "16px",
                           fontWeight: "100",

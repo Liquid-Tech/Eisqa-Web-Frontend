@@ -12,9 +12,10 @@ const Footer = () => {
       paddingY={3}
       className="text-dark fw-bold"
     >
-      {projectName} @ DEVELO IT
+      {projectName}
     </Box>
   );
 };
 
 export default Footer;
+  

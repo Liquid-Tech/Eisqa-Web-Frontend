@@ -1,0 +1,75 @@
+@import "../../../theme/colorsConfig.scss";
+
+.dashboard-page {
+  display: flex;
+  .right-sidebar {
+    padding: 10px 20px;
+    height: 100%;
+    .user-detail {
+      padding-top: 30px;
+      text-align: center;
+      .img {
+        width: 130px;
+        height: 130px;
+      }
+      .name {
+        padding-top: 8px;
+        color: #707070;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 15px;
+      }
+      .skills {
+        color: #707070;
+        font-weight: 300;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 15px;
+      }
+      .chip {
+        color: #fff;
+        background-color: $secondary;
+        font-weight: 400;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 12px;
+        border-radius: 50rem;
+        width: fit-content;
+        padding: 5px 35px;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          padding-right: 4px;
+          width: calc(100% - 40px);
+        }
+      }
+      .detail {
+        padding-top: 8px;
+        color: #707070;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 15px;
+      }
+    }
+    .user-detail-2 {
+      display: flex;
+      justify-content: space-between;
+      margin-top: -5px;
+      .label {
+        color: #707070;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 15px;
+      }
+      .label-text {
+        padding-top: 8px;
+        color: #707070;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 15px;
+      }
+    }
+  }
+}

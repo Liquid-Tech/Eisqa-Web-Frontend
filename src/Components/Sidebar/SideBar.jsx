@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import { routes } from "../../routes";
-import { useSelector, useDispatch } from "react-redux";
+import { NavLink, useLocation } from "react-router-dom";
+import { sellerdHeaderNav } from "../../routes";
+import { useDispatch } from "react-redux";
 import { setSidebarKey } from "../../Redux/Actions/sidebarKey";
-import {
-  Box,
-  List,
-  ListItemIcon,
-  ListItemText,
-  ListItemButton,
-  Typography,
-  Button,
-  Tooltip,
-} from "@mui/material";
+import { Box, List, ListItemText, ListItemButton, Button } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import logo from "../../assets/images/logo-2.svg";
 import "./styles.scss";
 
 const drawer = Object.freeze({
@@ -27,20 +18,20 @@ const SideBar = ({
   headerSidebar,
   setDrawerWidth,
 }) => {
+  const location = useLocation();
   const dispatch = useDispatch();
-  const [filterRoutes, setFilterRoutes] = useState([]);
-  const role = useSelector((state) => state.user.role);
-  const key = useSelector((state) => state.key);
+  // const [filterRoutes, setFilterRoutes] = useState([]);
+  // const role = useSelector((state) => state.user.role);
 
-  useEffect(() => {
-    let arr = [];
-    if (role !== "super") {
-      arr = routes.filter((item) => item.layout !== "super");
-    } else {
-      arr = routes;
-    }
-    setFilterRoutes(arr);
-  }, [role]);
+  // useEffect(() => {
+  //   let arr = [];
+  //   if (role !== "super") {
+  //     arr = routes.filter((item) => item.layout !== "super");
+  //   } else {
+  //     arr = routes;
+  //   }
+  //   setFilterRoutes(arr);
+  // }, [role]);
 
   const handleListItemClick = (value) => {
     dispatch(setSidebarKey(value));
@@ -60,18 +51,11 @@ const SideBar = ({
   return (
     <Box sx={{ width: drawerWidth }} className="sidebar">
       <Box className="logo-box">
-        <Typography
-          className="logo-heading"
-          color="primary"
-          textAlign="center"
-          variant="h5"
-        >
-          [Logo]
-        </Typography>
+        <img src={logo} alt="logo" />
       </Box>
       <Box className="links-box">
         <List>
-          {filterRoutes.map((route) => (
+          {sellerdHeaderNav.map((route) => (
             <NavLink to={route.path} className="navLink">
               <ListItemButton
                 button
@@ -83,15 +67,8 @@ const SideBar = ({
                 className="list-item"
                 key={route.path}
                 onClick={() => handleListItemClick(route.path)}
-                selected={key === route.path}
+                selected={location.pathname === route.path}
               >
-                <Tooltip
-                  title={drawerWidth === drawer.closed ? route.name : ""}
-                  placement="right"
-                  arrow
-                >
-                  <ListItemIcon>{route.icon()}</ListItemIcon>
-                </Tooltip>
                 {drawerWidth === drawer.open && (
                   <ListItemText
                     primary={route.name}
