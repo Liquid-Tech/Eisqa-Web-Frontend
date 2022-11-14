@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 
 export default function GigCard({ data }) {
+  
   return (
     <Card sx={{ maxWidth: 345, boxShadow: "0px 32px 70px 0px #0000000A" }}>
       <CardMedia
