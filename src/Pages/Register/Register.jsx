@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-// import { userLogin } from "../../Redux/Actions";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../Redux/Actions";
 import {
   Button,
   Box,
@@ -19,7 +19,7 @@ import * as Yup from "yup";
 import { Form, Formik } from "formik";
 // import { TextField } from "formik-mui";
 import "./register.scss";
-// import { useSnackbar } from "notistack";
+import { useSnackbar } from "notistack";
 import register_img from "../../assets/images/register.png";
 import logo from "../../assets/images/logo.png";
 import welcome from "../../assets/images/welcome-img.png";
@@ -58,16 +58,15 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user.user);
-  // const dispatch = useDispatch();
-  // const { enqueueSnackbar: notification } = useSnackbar();
+  const dispatch = useDispatch();
+  const { enqueueSnackbar: notification } = useSnackbar();
 
   const handleLogin = async (values, setSubmitting) => {
     console.log(values);
     setTimeout(() => {
-      // dispatch(userLogin(values));
-      // navigate("/admin/statistics");
-      // notification("Logged in.");
+      dispatch(userLogin(values));
+      navigate("/dashboard");
+      notification("Account Created Successfully.");
       setSubmitting(false);
     }, 1500);
   };

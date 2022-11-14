@@ -9,16 +9,14 @@ import {
 } from "@mui/material";
 import dayjs from "dayjs";
 import "./styles.scss";
-let obj = {};
-const Stats = () => {
+const TaskList = () => {
   return (
-    <Box className="stats">
-      {obj.sda}
+    <Box className="Dashboard">
       <Grid container alignItems="stretch" columnSpacing={2} rowSpacing={2}>
         <Grid item xs={12}>
           <Divider textAlign="left">
             <Typography variant="h5" color="primary">
-              Statistics
+              Task List
             </Typography>
           </Divider>
         </Grid>
@@ -38,4 +36,4 @@ const Stats = () => {
   );
 };
 
-export default Stats;
+export default TaskList;
