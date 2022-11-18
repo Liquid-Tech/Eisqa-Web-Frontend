@@ -253,5 +253,15 @@
       color: #fff !important;
       background-color: $secondary;
     }
+    .new-gig {
+      background-color: $secondary;
+      color: #fff;
+      height: 100%;
+      max-height: 300px;
+      width: 100%;
+      max-width: 300px;
+      display: grid;
+      place-items: center;
+    }
   }
 }
