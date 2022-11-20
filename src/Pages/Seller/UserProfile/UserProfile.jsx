@@ -10,11 +10,13 @@ import {
   IconButton,
   Grid,
   Chip,
+  Paper,
 } from "@mui/material";
 import userImg from "../../../assets/images/avatar.svg";
 import edit_icon from "../../../assets/images/edit.svg";
 import calendar_1 from "../../../assets/images/calendar-1.svg";
 import add_icon from "../../../assets/images/add.svg";
+import add_btn from "../../../assets/images/add-1.png";
 import "./styles.scss";
 import { useState } from "react";
 import GigCard from "../../../Components/Cards/GigCard";
@@ -296,10 +298,27 @@ const UserProfile = () => {
         </Grid>
         <Grid container spacing={5} sx={{ p: { md: 5, xs: 3 } }}>
           {gigs.map((gig) => (
-            <Grid item laptop={4} md={6} xs={12} key={gig}>
+            <Grid item laptop={4} md={6} xs={12} key={gig} className="align-text-bottom">
               <GigCard data={gig} />
             </Grid>
           ))}
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          className="d-flex justify-content-center"
+          sx={{ px: { md: 4, xs: 3 } }}
+        >
+          <Paper elevation={0} className="new-gig p-5">
+            <img src={add_btn} alt="add" />
+            <Typography
+              variant="body1"
+              className="poppins"
+              sx={{ color: "#fff", my: 2 }}
+            >
+              Create a New Gig
+            </Typography>
+          </Paper>
         </Grid>
       </Box>
     </Box>

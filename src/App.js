@@ -9,6 +9,7 @@ import { sellerdRoutes } from "./routes";
 import SellerHeader from "./Components/SellerHeader/SellerHeader";
 import SuspenseFallback from "./Components/SuspenseFallback/SuspenseFallback";
 import ErrorFallback from "./Components/ErrorFallback/ErrorFallback";
+import Footer from "./Components/Footer/Footer";
 
 // lazy loading
 const Login = lazy(() => import("./Pages/Login/Login"));
@@ -63,6 +64,7 @@ const App = () => {
                       );
                     })}
                   </Routes>
+                  <Footer />
                 </Suspense>
               </Container>
             </ErrorBoundary>

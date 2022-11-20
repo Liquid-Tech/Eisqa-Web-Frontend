@@ -1,0 +1,82 @@
+@import "../../../theme/colorsConfig.scss";
+
+.find-job-page {
+  .toggle-btn {
+    text-transform: none;
+    width: 200px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif !important;
+    border-radius: 10px;
+    border: 1px solid #d9d9d9;
+    box-shadow: 0px 4px 8px 0px #0000001a;
+    color: #707070;
+  }
+  .active-btn {
+    color: #fff !important;
+    background-color: $secondary;
+  }
+  .search-box {
+    text-align: center;
+    margin: 3%;
+    .MuiTextField-root {
+      max-width: 750px;
+      input {
+        color: $secondary;
+        font-weight: 700;
+      }
+    }
+    .MuiOutlinedInput-root {
+      padding-right: 0px;
+      .MuiTypography-root {
+        color: #fff;
+      }
+      fieldset {
+        border-color: rgba(0, 0, 0, 0.21);
+        border-radius: 8px;
+      }
+    }
+  }
+  .heading {
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 600;
+    color: #707070;
+    span {
+      color: $secondary;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif !important;
+    }
+  }
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    .sort-by {
+      display: grid;
+      place-items: center;
+      grid-template-columns: auto auto;
+      .text {
+        font-family: "Poppins", sans-serif !important;
+        color: #707070;
+      }
+    }
+    .MuiButton-endIcon {
+      margin-left: 0px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .find-job-page {
+    .toggle-btn {
+      width: 150px;
+    }
+  }
+}
+@media only screen and (max-width: 425px) {
+  .find-job-page {
+    .toggle-btn {
+      width: 120px;
+    }
+  }
+}

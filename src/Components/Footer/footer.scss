@@ -1,0 +1,74 @@
+@import "../../theme/colorsConfig.scss";
+
+.app-footer {
+  background-color: $footer-bg-color;
+  padding: 5% 8%;
+  padding-bottom: 0px;
+  color: #fff;
+  .logo {
+    width: clamp(5rem, 8vw, 8rem);
+  }
+  .desc {
+    margin-top: 10px;
+    font-size: 9px;
+    max-width: 34ch !important;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .nav-title {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .nav-links {
+    font-family: "Inter", sans-serif !important;
+    font-size: 12px;
+    font-weight: 200;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 13px 0px;
+    width: fit-content;
+  }
+  .nav-links:hover {
+    font-weight: 400;
+    color: #fff;
+  }
+  .bottom {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5% 0%;
+    .copyrights {
+      font-size: 10px;
+      font-weight: 400;
+      span {
+        color: $secondary;
+      }
+    }
+    .social-icons{
+        width: 100%;
+        max-width: 30px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .app-footer {
+    .desc {
+      font-size: 12px !important;
+      max-width: 33ch !important;
+    }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .app-footer {
+    .desc {
+      font-size: 12px !important;
+      max-width: fit-content !important;
+    }
+  }
+  .bottom {
+    .copyrights {
+     margin: 10px 0px;
+    }
+  }
+}
